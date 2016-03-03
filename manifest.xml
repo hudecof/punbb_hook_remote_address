@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<extension engine="1.0">
+  <id>sknic_remote_address_extension</id>
+  <title>get remote address from HTTP header</title>
+  <version>0.2</version>
+  <description>get the ip address form the custom header field X-REAL-IP</description>
+  <author>Peter Hudec</author>
+  <minversion>1.4</minversion>
+  <maxtestedon>1.4.2</maxtestedon>
+  <hooks>
+    <hook id="fn_get_remote_address_start"><![CDATA[
+        if (array_key_exists('HTTP_X_REAL_IP', $_SERVER))
+                return  $_SERVER['HTTP_X_REAL_IP'];
+    ]]></hook>
+  </hooks>
+</extension>
