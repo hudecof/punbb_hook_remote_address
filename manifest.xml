@@ -12,6 +12,7 @@
     <hook id="fn_get_remote_address_start"><![CDATA[
         if (array_key_exists('HTTP_X_REAL_IP', $_SERVER))
                 return  $_SERVER['HTTP_X_REAL_IP'];
+        return null;
     ]]></hook>
   </hooks>
 </extension>
